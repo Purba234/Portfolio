@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
+import { skills as skillsData } from '../data/skills'
 import { 
   SiPython, SiMysql, SiPostgresql, SiPandas, SiNumpy, SiScikitlearn, SiReact, SiHtml5, SiCss3, SiGithub, SiJavascript, SiGit
 } from 'react-icons/si'
@@ -82,32 +83,14 @@ const skillLogos = {
 }
 
 export default function Skills(){
-  const [skills, setSkills] = useState({})
-  const [loading, setLoading] = useState(true)
-
-  useEffect(()=>{
-    fetch('/api/skills')
-      .then(r=>r.json())
-      .then(data => {
-        setSkills(data)
-        setLoading(false)
-      })
-      .catch(()=>{
-        setSkills({})
-        setLoading(false)
-      })
-  },[])
-
   return (
     <div className="container" style={{paddingTop:48,paddingBottom:48}}>
       <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>Skills & Expertise</motion.h2>
       
-      {loading && <p style={{marginTop:16}}>Loading skills...</p>}
-      
-      {!loading && Object.keys(skills).length === 0 && <p style={{marginTop:16}}>No skills found.</p>}
+      {Object.keys(skillsData).length === 0 && <p style={{marginTop:16}}>No skills found.</p>}
       
       <motion.div className="skills-grid" variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true }} style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(300px, 1fr))',gap:32,marginTop:24}}>
-        {Object.entries(skills).map(([group, list], groupIdx)=> (
+        {Object.entries(skillsData).map(([group, list], groupIdx)=> (
           <motion.div key={group} variants={groupVariants} style={{padding:24,borderRadius:16,border:'1px solid rgba(96,165,250,0.2)',background:'linear-gradient(135deg, rgba(109,40,217,0.08), rgba(96,165,250,0.03))'}}>
             <h4 style={{fontSize:'1.2rem',marginTop:0,marginBottom:16,color:'var(--accent)',fontWeight:700,textTransform:'uppercase',letterSpacing:'0.5px'}}>{group}</h4>
             <motion.div variants={containerVariants} initial="hidden" animate="show" style={{display:'flex',flexWrap:'wrap',gap:10}}>

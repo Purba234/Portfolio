@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { projects as projectsData } from '../data/projects'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20, scale: 0.99 },
@@ -28,17 +29,9 @@ function ProjectCard({p}){
 }
 
 export default function ProjectsSection(){
-  const [projects, setProjects] = useState([])
   const [filter, setFilter] = useState('')
 
-  useEffect(()=>{
-    fetch('/api/projects')
-      .then(r=>r.json())
-      .then(setProjects)
-      .catch(()=>setProjects([]))
-  },[])
-
-  const filtered = filter ? projects.filter(p=> p.tech && p.tech.map(t=>t.toLowerCase()).includes(filter.toLowerCase())) : projects
+  const filtered = filter ? projectsData.filter(p=> p.tech && p.tech.map(t=>t.toLowerCase()).includes(filter.toLowerCase())) : projectsData
 
   return (
     <div className="container" style={{paddingTop:32,paddingBottom:32}}>
