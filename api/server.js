@@ -4,8 +4,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const contactRoutes = require('./routes/contact');
-const projectsRoutes = require('./routes/projects');
-const skillsRoutes = require('./routes/skills');
 
 // serve static assets (resume PDF, images)
 const path = require('path');
@@ -15,8 +13,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/contact', contactRoutes);
-app.use('/api/projects', projectsRoutes);
-app.use('/api/skills', skillsRoutes);
 
 // Serve public files (e.g., resume) from /api/resume via static middleware
 app.use('/public', express.static(path.join(__dirname, 'public')));

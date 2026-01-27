@@ -1,7 +1,4 @@
-const express = require('express');
-const router = express.Router();
-// Simple static projects response for demo — replace with DB if needed
-const projects = [
+export const projects = [
   {
     id: 1,
     title: 'Personal Portfolio',
@@ -22,14 +19,7 @@ const projects = [
   }
 ];
 
-// Support optional filtering by tech query: /api/projects?tech=React
-router.get('/', (req, res) => {
-  const { tech } = req.query;
-  if (tech) {
-    const filtered = projects.filter(p => p.tech.map(t => t.toLowerCase()).includes(tech.toLowerCase()));
-    return res.json(filtered);
-  }
-  res.json(projects);
-});
-
-module.exports = router;
+// Helper function to filter projects by tech
+export const filterProjectsByTech = (tech) => {
+  return projects.filter(p => p.tech.map(t => t.toLowerCase()).includes(tech.toLowerCase()));
+};
