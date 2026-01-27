@@ -44,7 +44,21 @@ export default function ProjectsSection(){
     <div className="container" style={{paddingTop:32,paddingBottom:32}}>
       <h2>Projects</h2>
       <div style={{marginTop:8}}>
-        <input placeholder="Filter by tech (e.g. React)" value={filter} onChange={e=>setFilter(e.target.value)} />
+        <input 
+          placeholder="Filter by tech (e.g. React)" 
+          value={filter} 
+          onChange={e=>setFilter(e.target.value)}
+          style={{
+            padding:'14px',
+            borderRadius:'10px',
+            border:'1px solid rgba(255,255,255,0.08)',
+            background:'linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))',
+            color:'var(--text)',
+            width:'100%',
+            maxWidth:'400px',
+            transition:'border-color .18s,box-shadow .18s'
+          }}
+        />
       </div>
       <div className="projects-grid" style={{marginTop:12}}>
         {filtered.length ? filtered.map(p=> <ProjectCard key={p.id} p={p} />) : <p>No projects found.</p>}
