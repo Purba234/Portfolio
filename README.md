@@ -23,6 +23,7 @@ A modern, full-stack portfolio website showcasing skills, projects, and professi
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **React 18** - UI library
 - **Vite** - Build tool and dev server
 - **Framer Motion** - Animation library
@@ -32,6 +33,7 @@ A modern, full-stack portfolio website showcasing skills, projects, and professi
 - **React Router** - Navigation
 
 ### Backend
+
 - **Node.js** - Runtime environment
 - **Express** - Web framework
 - **MongoDB** - Database (optional)
@@ -40,6 +42,7 @@ A modern, full-stack portfolio website showcasing skills, projects, and professi
 - **dotenv** - Environment variables
 
 ### Deployment
+
 - **Vercel** - Hosting platform
 - **Serverless Functions** - API endpoints
 
@@ -102,45 +105,53 @@ Portfolio/
 ### Local Development
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Purba234/Portfolio.git
    cd Portfolio
    ```
 
 2. **Install dependencies for both frontend and backend**
-   
+
    Backend:
+
    ```bash
    cd api
    npm install
    ```
-   
+
    Frontend:
+
    ```bash
    cd frontend
    npm install
    ```
 
 3. **Set up environment variables**
-   
+
    Create `.env` file in the `api` directory:
+
    ```env
    PORT=5001
    MONGODB_URI=your_mongodb_connection_string  # Optional
    ```
 
 4. **Start the backend server**
+
    ```bash
    cd api
    npm run dev
    ```
+
    Server will run on `http://localhost:5001`
 
 5. **Start the frontend development server**
+
    ```bash
    cd frontend
    npm run dev
    ```
+
    Frontend will run on `http://localhost:3000`
 
 6. **Open your browser**
@@ -149,13 +160,16 @@ Portfolio/
 ## 📦 Building for Production
 
 ### Frontend Build
+
 ```bash
 cd frontend
 npm run build
 ```
+
 The build output will be in `frontend/dist/`
 
 ### Backend Production
+
 The backend is configured to run as serverless functions on Vercel.
 
 ## 🚀 Deployment
@@ -163,16 +177,19 @@ The backend is configured to run as serverless functions on Vercel.
 ### Deploy to Vercel
 
 1. **Install Vercel CLI**
+
    ```bash
    npm install -g vercel
    ```
 
 2. **Login to Vercel**
+
    ```bash
    vercel login
    ```
 
 3. **Deploy to preview**
+
    ```bash
    vercel
    ```
@@ -185,6 +202,7 @@ The backend is configured to run as serverless functions on Vercel.
 ### Environment Variables on Vercel
 
 Add these environment variables in your Vercel project settings:
+
 - `MONGODB_URI` - MongoDB connection string (if using database)
 
 ## 🎨 Customization
@@ -204,12 +222,12 @@ Add these environment variables in your Vercel project settings:
 
 ## 📡 API Endpoints
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/skills` | GET | Get all skills organized by category |
-| `/api/projects` | GET | Get all projects |
-| `/api/contact` | POST | Submit contact form |
-| `/api/resume` | GET | Download resume PDF |
+| Endpoint        | Method | Description                          |
+| --------------- | ------ | ------------------------------------ |
+| `/api/skills`   | GET    | Get all skills organized by category |
+| `/api/projects` | GET    | Get all projects                     |
+| `/api/contact`  | POST   | Submit contact form                  |
+| `/api/resume`   | GET    | Download resume PDF                  |
 
 ## 🤝 Contributing
 
