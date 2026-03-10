@@ -4,25 +4,7 @@ import { skills as skillsData } from '../data/skills'
 import { 
   SiPython, SiMysql, SiPostgresql, SiPandas, SiNumpy, SiScikitlearn, SiReact, SiHtml5, SiCss3, SiGithub, SiJavascript, SiGit
 } from 'react-icons/si'
-import { FaDatabase } from 'react-icons/fa'
-
-// SVG logos (local assets)
-import pythonLogo from '../assets/icons/python.svg'
-import javascriptLogo from '../assets/icons/javascript.svg'
-import sqlLogo from '../assets/icons/sql.svg'
-import mysqlLogo from '../assets/icons/mysql.svg'
-import postgresqlLogo from '../assets/icons/postgresql.svg'
-import pandasLogo from '../assets/icons/pandas.svg'
-import numpyLogo from '../assets/icons/numpy.svg'
-import scikitlearnLogo from '../assets/icons/scikitlearn.svg'
-import matplotlibLogo from '../assets/icons/matplotlib.svg'
-import reactLogo from '../assets/icons/react.svg'
-import html5Logo from '../assets/icons/html5.svg'
-import css3Logo from '../assets/icons/css3.svg'
-import gitLogo from '../assets/icons/git.svg'
-import githubLogo from '../assets/icons/github.svg'
-import vscodeLogo from '../assets/icons/vscode.svg'
-import powerbiLogo from '../assets/icons/powerbi.svg'
+import { FaDatabase, FaChartBar, FaChartLine, FaCode } from 'react-icons/fa'
 
 const groupVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -55,31 +37,14 @@ const skillIcons = {
   'Pandas': SiPandas,
   'NumPy': SiNumpy,
   'Scikit-learn': SiScikitlearn,
+  'Matplotlib': FaChartBar,
   'React.js': SiReact,
   'HTML': SiHtml5,
   'CSS': SiCss3,
   'Git': SiGit,
-  'GitHub': SiGithub
-}
-
-// Prefer SVG logos when available
-const skillLogos = {
-  'Python': pythonLogo,
-  'JavaScript': javascriptLogo,
-  'SQL': sqlLogo,
-  'MySQL': mysqlLogo,
-  'PostgreSQL': postgresqlLogo,
-  'Pandas': pandasLogo,
-  'NumPy': numpyLogo,
-  'Matplotlib': matplotlibLogo,
-  'Scikit-learn': scikitlearnLogo,
-  'React.js': reactLogo,
-  'HTML': html5Logo,
-  'CSS': css3Logo,
-  'Git': gitLogo,
-  'GitHub': githubLogo,
-  'VS Code': vscodeLogo,
-  'Power BI': powerbiLogo
+  'GitHub': SiGithub,
+  'VS Code': FaCode,
+  'Power BI': FaChartLine
 }
 
 export default function Skills(){
@@ -96,7 +61,6 @@ export default function Skills(){
             <motion.div variants={containerVariants} initial="hidden" animate="show" style={{display:'flex',flexWrap:'wrap',gap:10}}>
               {list.map((skill, idx)=> {
                 const Icon = skillIcons[skill];
-                const Logo = skillLogos[skill];
                 return (
                 <motion.button 
                   key={`${group}-${skill}`} 
@@ -120,9 +84,7 @@ export default function Skills(){
                     gap:'8px'
                   }}
                 >
-                  <span style={{fontSize:'1.25rem', display:'inline-flex', alignItems:'center'}}>
-                    {Logo ? <img src={Logo} alt={`${skill} logo`} style={{width:20,height:20}} /> : Icon ? <Icon /> : <span style={{fontSize:'1.3rem'}}>💡</span>}
-                  </span>
+                  {Icon && <span style={{fontSize:'1.25rem', display:'inline-flex', alignItems:'center'}}><Icon /></span>}
                   {skill}
                 </motion.button>
                 )

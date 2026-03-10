@@ -16,6 +16,7 @@ export default function Navbar(){
         <button onClick={()=>scrollTo('about')}>About</button>
         <button onClick={()=>scrollTo('skills')}>Skills</button>
         <button onClick={()=>scrollTo('projects')}>Projects</button>
+        <button onClick={()=>scrollTo('hackathons')}>Hackathons</button>
         <button onClick={()=>scrollTo('contact')}>Contact</button>
         <a className="resume" href="/api/resume" download style={{marginLeft:8}}>Resume</a>
         <ThemeToggle />

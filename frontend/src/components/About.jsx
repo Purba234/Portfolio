@@ -54,6 +54,14 @@ export default function About(){
 
           <motion.div variants={cardVariants} initial="hidden" whileInView="show" viewport={{ once:true }} style={{marginTop:24,padding:16,borderRadius:12,border:'1px solid rgba(96,165,250,0.06)',background:'linear-gradient(135deg, rgba(96,165,250,0.02), rgba(109,40,217,0.01))'}}>
             <h4 style={{marginTop:0,marginBottom:8,color:'var(--accent)'}}>Experience</h4>
+            <div style={{marginBottom:12}}>
+              <strong>Power BI Intern - Cognifyz Technologies (Feb 2026 - Present)</strong>
+              <ul style={{margin:8,paddingLeft:20}}>
+                <li>Working on interactive Power BI dashboards and reports to turn raw datasets into actionable business insights</li>
+                <li>Performing data cleaning, transformation, and DAX-based analysis to improve reporting quality and decision support</li>
+              </ul>
+              <p style={{margin:'4px 0 0',color:'var(--muted)',fontSize:'0.9rem'}}>Location: India · Remote</p>
+            </div>
             <div>
               <strong>Data Visualization Analyst (Virtual) — Tata Consultancy Services via Forage (Jan 2026)</strong>
               <ul style={{margin:8,paddingLeft:20}}>

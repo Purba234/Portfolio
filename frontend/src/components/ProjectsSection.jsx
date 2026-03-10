@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { projects as projectsData } from '../data/projects'
 
@@ -29,18 +29,11 @@ function ProjectCard({p}){
 }
 
 export default function ProjectsSection(){
-  const [filter, setFilter] = useState('')
-
-  const filtered = filter ? projectsData.filter(p=> p.tech && p.tech.map(t=>t.toLowerCase()).includes(filter.toLowerCase())) : projectsData
-
   return (
     <div className="container" style={{paddingTop:32,paddingBottom:32}}>
       <h2>Projects</h2>
-      <div style={{marginTop:8}}>
-        <input placeholder="Filter by tech (e.g. React)" value={filter} onChange={e=>setFilter(e.target.value)} />
-      </div>
       <div className="projects-grid" style={{marginTop:12}}>
-        {filtered.length ? filtered.map(p=> <ProjectCard key={p.id} p={p} />) : <p>No projects found.</p>}
+        {projectsData.length ? projectsData.map(p=> <ProjectCard key={p.id} p={p} />) : <p>No projects found.</p>}
       </div>
     </div>
   )

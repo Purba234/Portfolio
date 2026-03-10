@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
 import ProjectsSection from './components/ProjectsSection'
+import HackathonSection from './components/HackathonSection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 
@@ -16,6 +17,7 @@ export default function App(){
         <section id="about"><About /></section>
         <section id="skills"><Skills /></section>
         <section id="projects"><ProjectsSection /></section>
+        <section id="hackathons"><HackathonSection /></section>
         <section id="contact"><ContactSection /></section>
       </main>
       <Footer />

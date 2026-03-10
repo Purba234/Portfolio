@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { FiMapPin } from 'react-icons/fi'
 import profileImg from '../assets/portfolio.jpeg'
 import profileImgJpg from '../assets/portfolio.jpeg' 
 
@@ -66,6 +67,34 @@ export default function Hero(){
           <div className="hero-text">
             <motion.h1 variants={headline} initial="hidden" animate="show">Purba Saha</motion.h1>
             <motion.h2 variants={subtitle} initial="hidden" animate="show" style={{fontSize:'1.5rem',color:'var(--accent)',marginTop:8,marginBottom:16}}>AI/ML & Data Science Enthusiast</motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.28, duration: 0.4, ease: 'easeOut' }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '7px 14px',
+                borderRadius: 999,
+                border: '1px solid rgba(255,255,255,0.1)',
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))',
+                marginBottom: 14
+              }}
+            >
+              <FiMapPin size={14} color="var(--accent)" aria-hidden="true" />
+              <span style={{ fontWeight: 600, fontSize: '0.95rem' }}>India</span>
+              <span
+                style={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: '50%',
+                  background: '#22c55e',
+                  boxShadow: '0 0 0 3px rgba(34,197,94,0.16)'
+                }}
+                aria-label="Available"
+              />
+            </motion.div>
             <motion.p variants={description} initial="hidden" animate="show" style={{maxWidth:'600px',fontSize:'1.1rem',lineHeight:1.6}}>Transforming complex datasets into actionable insights through AI/ML expertise. Passionate about data science, predictive modeling, and building intelligent solutions.</motion.p>
 
             <motion.div variants={btnVariant} initial="hidden" animate="show" style={{marginTop:28,display:'flex',gap:12,flexWrap:'wrap'}}>
