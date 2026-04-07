@@ -1,5 +1,11 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/dist"
+  "buildCommand": "FRONTEND_DIR=''; for d in frontend ../frontend PORTFOLIO/frontend ../PORTFOLIO/frontend; do if [ -d \"$d\" ]; then FRONTEND_DIR=\"$d\"; break; fi; done; if [ -z \"$FRONTEND_DIR\" ]; then echo 'Frontend directory not found'; pwd; ls -la; exit 1; fi; npm --prefix \"$FRONTEND_DIR\" install; npm --prefix \"$FRONTEND_DIR\" run build; rm -rf dist; cp -r \"$FRONTEND_DIR/dist\" dist",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
+    }
+  ]
 }
