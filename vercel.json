@@ -1,19 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "cd PORTFOLIO/frontend && npm install && npm run build",
-  "outputDirectory": "PORTFOLIO/frontend/dist",
-  "rewrites": [
-    {
-      "source": "/api/skills",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/api/projects",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/api/resume",
-      "destination": "/api/index.js"
-    }
-  ]
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist"
 }
