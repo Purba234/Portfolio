@@ -56,8 +56,10 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/api/resume', (req, res) => {
   const file = path.join(__dirname, 'Purba_Saha_CV.pdf');
-  res.download(file, 'Purba_Saha_CV.pdf', (err) => {
-    if (err) console.error('Resume download error:', err);
+  res.setHeader('Content-Type', 'application/pdf');
+  res.setHeader('Content-Disposition', 'inline; filename="Purba_Saha_CV.pdf"');
+  res.sendFile(file, (err) => {
+    if (err) console.error('Resume preview error:', err);
   });
 });
 

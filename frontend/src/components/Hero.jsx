@@ -99,7 +99,7 @@ export default function Hero(){
 
             <motion.div variants={btnVariant} initial="hidden" animate="show" style={{marginTop:28,display:'flex',gap:12,flexWrap:'wrap'}}>
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="cta" onClick={()=>document.getElementById('projects').scrollIntoView({behavior:'smooth'})}>View Projects</motion.button>
-              <motion.a whileHover={{ scale: 1.05 }} href="/api/resume" download><motion.button whileTap={{ scale: 0.95 }} className="cta outline">Download Resume</motion.button></motion.a>
+              <motion.a whileHover={{ scale: 1.05 }} href="/api/resume" target="_blank" rel="noreferrer"><motion.button whileTap={{ scale: 0.95 }} className="cta outline">View Resume</motion.button></motion.a>
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="cta outline" onClick={()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'})}>Contact Me</motion.button>
             </motion.div>
 
